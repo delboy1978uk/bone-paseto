@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "delboy1978uk/barnacle": "^2.3",
         "paragonie/paseto": "^1.0"
     },
     "require-dev": {
