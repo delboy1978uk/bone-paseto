@@ -29,14 +29,6 @@ class PasetoService
     }
 
     /**
-     * @param SymmetricKey $key
-     */
-    public function setSharedKey(SymmetricKey $key): void
-    {
-        $this->sharedKey = $key;
-    }
-
-    /**
      * @param array $data
      * @param string $duration
      * @return Builder
