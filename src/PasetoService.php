@@ -7,8 +7,12 @@ use DateTime;
 use ParagonIE\Paseto\Builder;
 use ParagonIE\Paseto\JsonToken;
 use ParagonIE\Paseto\Keys\SymmetricKey;
+use ParagonIE\Paseto\Parser;
 use ParagonIE\Paseto\Protocol\Version2;
+use ParagonIE\Paseto\ProtocolCollection;
 use ParagonIE\Paseto\Purpose;
+use ParagonIE\Paseto\Rules\IssuedBy;
+use ParagonIE\Paseto\Rules\NotExpired;
 
 class PasetoService
 {
@@ -61,8 +65,7 @@ class PasetoService
     {
         $parser = (new Parser())
             ->setKey($this->sharedKey)
-            ->addRule(new NotExpired)
-            ->addRule(new IssuedBy('issuer defined during creation'))
+            ->addRule(new NotExpired())
             ->setPurpose(Purpose::local())
             ->setAllowedVersions(ProtocolCollection::v2());
         $token = $parser->parse($providedToken);
