@@ -31,7 +31,7 @@ class PasetoService
     /**
      * @param array $data
      * @param string $duration
-     * @return Builder
+     * @return string
      * @throws \ParagonIE\Paseto\Exception\InvalidKeyException
      * @throws \ParagonIE\Paseto\Exception\InvalidPurposeException
      * @throws \ParagonIE\Paseto\Exception\PasetoException

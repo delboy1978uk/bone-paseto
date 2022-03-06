@@ -3,8 +3,8 @@
 namespace Bone\Paseto;
 
 use Barnacle\Container;
+use Barnacle\Exception\NotFoundException;
 use Barnacle\RegistrationInterface;
-use Bone\Exception;
 use ParagonIE\Paseto\Keys\SymmetricKey;
 
 class PasetoPackage implements RegistrationInterface
@@ -15,7 +15,7 @@ class PasetoPackage implements RegistrationInterface
     public function addToContainer(Container $c)
     {
         if (!$c->has('bone-paseto')) {
-            throw new Exception('Please add a bone-paseto array config with a key `sharedKey`');
+            throw new NotFoundException('Please add a bone-paseto array config with a key `sharedKey`');
         }
 
         $config = $c->get('bone-paseto');
