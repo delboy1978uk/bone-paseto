@@ -7,6 +7,7 @@ use Barnacle\Exception\NotFoundException;
 use Bone\Paseto\PasetoPackage;
 use Bone\Paseto\PasetoService;
 use Codeception\Test\Unit;
+use ParagonIE\Paseto\JsonToken;
 
 class PasetoServiceTest extends Unit
 {
@@ -22,7 +23,9 @@ class PasetoServiceTest extends Unit
         $service = $c->get(PasetoService::class);
         $token = $service->encryptToken(['some' => 'data']);
         $this->assertIsString($token);
-        $array = $service->decryptToken($token);
+        $token = $service->decryptToken($token);
+        $this->assertInstanceOf(JsonToken::class, $token);
+        $array = $token->getClaims();
         $this->assertIsArray($array);
         $this->assertArrayHasKey('some', $array);
         $this->assertEquals('data', $array['some']);
