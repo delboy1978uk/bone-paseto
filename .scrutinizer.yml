@@ -1,0 +1,13 @@
+tools:
+    external_code_coverage: true
+build:
+    nodes:
+        analysis:
+            tests:
+                override:
+                    - php-scrutinizer-run
+    environment:
+        php: 8.0.14
+filter:
+    paths:
+        - src/*
