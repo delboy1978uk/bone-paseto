@@ -6,8 +6,9 @@ use Barnacle\Container;
 use Barnacle\Exception\NotFoundException;
 use Bone\Paseto\PasetoPackage;
 use Bone\Paseto\PasetoService;
+use Codeception\Test\Unit;
 
-class PasetoPackageTest extends \Codeception\Test\Unit
+class PasetoPackageTest extends Unit
 {
     public function testPackageThrowsNotFoundException()
     {
