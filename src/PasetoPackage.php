@@ -29,17 +29,8 @@ class PasetoPackage implements RegistrationInterface, DefaultSettingsProviderInt
         });
     }
 
-    public function getRequiredPackages(): array
-    {
-        return [];
-    }
-
     public function getSettingsFileName(): string
     {
         return __DIR__ . '/../data/config/bone-paseto.php';
     }
-
-    public function postInstall(Command $command, SymfonyStyle $io): void {}
-
-
 }
