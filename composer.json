@@ -9,14 +9,13 @@
         }
     ],
     "require": {
-        "delboy1978uk/barnacle": "^2.4",
+        "boneframework/contracts": "^1.7",
+        "delboy1978uk/barnacle": "^2.5",
         "paragonie/paseto": "^v3.1"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master",
-        "codeception/codeception": "^5.1",
-        "codeception/module-phpbrowser": "^3.0",
-        "codeception/module-asserts": "^3.0"
+        "roave/security-advisories": "dev-latest",
+        "delboy1978uk/dev-tools:": "^1.0"
     },
     "autoload": {
         "psr-4": {
